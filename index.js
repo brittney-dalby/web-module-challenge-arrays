@@ -45,8 +45,8 @@ Use the copy function below to do the following:
   2. Return a copy of the received array  
 */
 
-function copy(/*your code here*/){
-  /*your code here*/
+function copy(array){
+  let copy = [...originalFlavors]
 }    
 
 
@@ -81,7 +81,7 @@ Use the addFlavor function below to do the following:
 */
 
 
-function addFlavor(/*your code here*/){
+function addFlavor(/*your code here*/array, string){
  /*your code here*/
 }
 
@@ -113,9 +113,10 @@ Use the getFlavorByIndex function below to do the following:
 
   For example: running getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully
 */
-
+//2 parameters array, number (holding place for an index)//
 function getFlavorByIndex(/*your code here*/){
   /*your code here*/
+  //array[0]//
 }
 
 
@@ -134,11 +135,12 @@ Use the removeFlavorByName function below to do the following:
   HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(/*your code here*/){
+function removeFlavorByName(/*your code here*/array, string){
   /*your code here*/
 }
 
-
+//use .splice, it takes two arguments start and how many items to delete
+//outside of the loop return the array
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 July 7th is "World Chocolate Day" and Baskin Robins wants to create promotional materials highlighting all of their chocolate flavors. 
@@ -159,11 +161,19 @@ Use the filterByWord function below to do the following:
 
   DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem. 
 */
+//use include method
 
-function filterByWord(/*your code here*/){
-  /*your code here*/
+function filterByWord(array, string){
+  const filtered =[];
+
+  for(let i = 0; i < array.length; i++){
+    if(array[i].includes(string)){
+      filtered.push(array[i]);
+    }
+  }
+  return filtered;
 }
-
+console.log('task 7', filterByWord(originalFlavors, 'Chocolate'));
 
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/ 
 
