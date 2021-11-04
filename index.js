@@ -66,7 +66,9 @@ For Example: is31Flavors(originalFlavors) will return true if your code is worki
 
 function is31Flavors(array){
  if(array.length === 31){
-   return true
+   return true;
+ }else{
+   return false;
  }
 }
 
@@ -86,7 +88,8 @@ Use the addFlavor function below to do the following:
 
 
 function addFlavor(array, string){
- return array.unshift
+  array.unshift(string)
+  return array;
 }
 
 console.log('task 3', addFlavor(originalFlavors, 'Rainbow Sherbert'));
@@ -103,11 +106,12 @@ Use the removeLastFlavor function below to do the following:
   For example: running removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]
 */
 
-function removeLastFlavor(/*your code here*/){
- /*your code here*/
+function removeLastFlavor(array){
+ array.pop()
+ return array;
 }
 
-
+console.log('task 4',removeLastFlavor(originalFlavors));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Write a function that returns a flavor at a given index in the array.
@@ -120,11 +124,10 @@ Use the getFlavorByIndex function below to do the following:
   For example: running getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully
 */
 //2 parameters array, number (holding place for an index)//
-function getFlavorByIndex(/*your code here*/){
-  /*your code here*/
-  //array[0]//
+function getFlavorByIndex(array, number){
+    return array[number];
 }
-
+console.log('task 5', getFlavorByIndex(originalFlavors, 2));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 As corporate wants to add more and more flavors to their lineup, they've realized that they need to remove flavors based on flavor name, 
@@ -141,9 +144,15 @@ Use the removeFlavorByName function below to do the following:
   HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(/*your code here*/array, string){
-  /*your code here*/
+function removeFlavorByName(array, string){
+  for(let i = 0; i < array.length; i++){
+    if(array[i] === string){
+      array.splice(i, 1);
+    }
+  }
+  return array;
 }
+console.log('task 6', removeFlavorByName(originalFlavors, 'Rocky Road'));
 
 //use .splice, it takes two arguments start and how many items to delete
 //outside of the loop return the array
